@@ -1,4 +1,4 @@
-# ChirpStack open-source LoRaWAN(R) Network Server
+# ChirpStack open-source LoRaWAN(R) Network Server (but it can do TS-LoRa)
 
 ![CI](https://github.com/chirpstack/chirpstack/actions/workflows/main.yml/badge.svg?branch=master)
 
