@@ -12,44 +12,77 @@ Here are the steps that you need to undertake to achieve the debug build optimiz
    $ sudo apt install git -y
 ```
 4) Move to the Documents folder (it is optional, everything is fine as long as your shell session is located in one of the subdirectiories of the HOME folder)
-   $ cd ~/Documents
-5) Download this project's (i.e. ts-lora chirpstack) source code from Github:
+```bash
+   $ cd ~/Documents]
+```
+6) Download this project's (i.e. ts-lora chirpstack) source code from Github:
+```bash
    $ git clone https://github.com/ts-lora/ts-lora-chirpstack.git
-6) Move to the project's directory:
+```
+8) Move to the project's directory:
+```bash
    $ cd ts-lora-chirpstack
-7) Install curl to be able to download Nix:
+```
+10) Install curl to be able to download Nix:
+```bash
    $ sudo apt install curl -y
-8) Install xz-util to be able to unpack Nix:
+```
+12) Install xz-util to be able to unpack Nix:
+```bash
    $ sudo apt install xz-utils -y
-9) Install Nix:
-   $ sh <(curl -L https://nixos.org/nix/install) --no-daemon
+```
+14) Install Nix:
+```bash
+$ sh <(curl -L https://nixos.org/nix/install) --no-daemon
    $ . /home/bob/.nix-profile/etc/profile.d/nix.sh
-15) Restart the shell session:
+```
+16) Restart the shell session:
+```bash
     $ exec $SHELL
-16) Install docker engine through its convenience script:
+```
+18) Install docker engine through its convenience script:
+```bash
     $ curl -fsSL https://get.docker.com -o install-docker.sh
     $ sudo sh install-docker.sh
-17) Allow to run the docker engine commands as a non-root user:
+```
+20) Allow to run the docker engine commands as a non-root user:
+```bash
     $ sudo groupadd docker
     $ sudo usermod -aG docker $USER
     $ newgrp docker
-18) Start the development shell:
+```
+22) Start the development shell:
+```bash
     $ nix-shell
-19) Build the Chirpstack UI:
+```
+24) Build the Chirpstack UI:
+```bash
     $ make build-ui
-20) Run the required services for the Chirpstack
+```
+26) Run the required services for the Chirpstack
+```bash
     $ docker compose up -d
-21) Run the Chirpstack tests (optional):
+```
+28) Run the Chirpstack tests (optional):
+ ```bash
     $ make test
-22) Install the Chirpstack's dependencies:
+```
+29) Install the Chirpstack's dependencies:
+```bash
     $ make dev-dependencies
-23) Do the debug build:
+```
+31) Do the debug build:
+```bash
     $ cd chirpstack
     $ make debug-amd64
-24) Run chirpstack
+```
+33) Run chirpstack
+```bash
     $ cd chirpstack
+```
+```bash
     $ cargo run -- --config-dir configuration
-
+```
 ## License
 
 ChirpStack Network Server is distributed under the MIT license. See also
