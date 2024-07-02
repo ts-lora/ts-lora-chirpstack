@@ -44,6 +44,9 @@ Here are the steps that you need to undertake to achieve the debug build optimiz
 23) Do the debug build:
     $ cd chirpstack
     $ make debug-amd64
+24) Run chirpstack
+    $ cd chirpstack
+    $ cargo run -- --config-dir configuration
 
 ## License
 
