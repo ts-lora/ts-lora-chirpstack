@@ -8,52 +8,52 @@ Here are the steps that you need to undertake to achieve the debug build optimiz
 1) Open the bash shell either by using the GUI or by clicking Ctrl + Alt + T.
 2) Install git to able to conveniently downliad the source code of this program (I assume that you are logged in as a non-root user who can do sudo):
 ```bash
-   $ sudo apt update
-   $ sudo apt install git -y
+   sudo apt update
+   sudo apt install git -y
 ```
 4) Move to the Documents folder (it is optional, everything is fine as long as your shell session is located in one of the subdirectiories of the HOME folder)
 ```bash
-   $ cd ~/Documents]
+   cd ~/Documents]
 ```
 6) Download this project's (i.e. ts-lora chirpstack) source code from Github:
 ```bash
-   $ git clone https://github.com/ts-lora/ts-lora-chirpstack.git
+   git clone https://github.com/ts-lora/ts-lora-chirpstack.git
 ```
 8) Move to the project's directory:
 ```bash
-   $ cd ts-lora-chirpstack
+   cd ts-lora-chirpstack
 ```
 10) Install curl to be able to download Nix:
 ```bash
-   $ sudo apt install curl -y
+   sudo apt install curl -y
 ```
 12) Install xz-util to be able to unpack Nix:
 ```bash
-   $ sudo apt install xz-utils -y
+   sudo apt install xz-utils -y
 ```
 14) Install Nix:
 ```bash
-$ sh <(curl -L https://nixos.org/nix/install) --no-daemon
-   $ . /home/bob/.nix-profile/etc/profile.d/nix.sh
+  sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  . /home/bob/.nix-profile/etc/profile.d/nix.sh
 ```
 16) Restart the shell session:
 ```bash
-    $ exec $SHELL
+   exec $SHELL
 ```
 18) Install docker engine through its convenience script:
 ```bash
-    $ curl -fsSL https://get.docker.com -o install-docker.sh
-    $ sudo sh install-docker.sh
+   curl -fsSL https://get.docker.com -o install-docker.sh
+   sudo sh install-docker.sh
 ```
 20) Allow to run the docker engine commands as a non-root user:
 ```bash
-    $ sudo groupadd docker
-    $ sudo usermod -aG docker $USER
-    $ newgrp docker
+   sudo groupadd docker
+   sudo usermod -aG docker $USER
+   newgrp docker
 ```
 22) Start the development shell:
 ```bash
-    $ nix-shell
+   nix-shell
 ```
 24) Build the Chirpstack UI:
 ```bash
