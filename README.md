@@ -7,19 +7,21 @@ Here are the steps that you need to undertake to achieve the debug build optimiz
 
 1) Open the bash shell either by using the GUI or by clicking Ctrl + Alt + T.
 2) Install git to able to conveniently downliad the source code of this program (I assume that you are logged in as a non-root user who can do sudo):
+```bash
    $ sudo apt update
    $ sudo apt install git -y
-3) Move to the Documents folder (it is optional, everything is fine as long as your shell session is located in one of the subdirectiories of the HOME folder)
+```
+4) Move to the Documents folder (it is optional, everything is fine as long as your shell session is located in one of the subdirectiories of the HOME folder)
    $ cd ~/Documents
-4) Download this project's (i.e. ts-lora chirpstack) source code from Github:
+5) Download this project's (i.e. ts-lora chirpstack) source code from Github:
    $ git clone https://github.com/ts-lora/ts-lora-chirpstack.git
-5) Move to the project's directory:
+6) Move to the project's directory:
    $ cd ts-lora-chirpstack
-6) Install curl to be able to download Nix:
+7) Install curl to be able to download Nix:
    $ sudo apt install curl -y
-7) Install xz-util to be able to unpack Nix:
+8) Install xz-util to be able to unpack Nix:
    $ sudo apt install xz-utils -y
-8) Install Nix:
+9) Install Nix:
    $ sh <(curl -L https://nixos.org/nix/install) --no-daemon
    $ . /home/bob/.nix-profile/etc/profile.d/nix.sh
 15) Restart the shell session:
