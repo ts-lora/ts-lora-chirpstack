@@ -11,72 +11,72 @@ Here are the steps that you need to undertake to achieve the debug build optimiz
    sudo apt update
    sudo apt install git -y
 ```
-4) Move to the Documents folder (it is optional, everything is fine as long as your shell session is located in one of the subdirectiories of the HOME folder)
+3) Move to the Documents folder (it is optional, everything is fine as long as your shell session is located in one of the subdirectiories of the HOME folder)
 ```bash
    cd ~/Documents]
 ```
-6) Download this project's (i.e. ts-lora chirpstack) source code from Github:
+4) Download this project's (i.e. ts-lora chirpstack) source code from Github:
 ```bash
    git clone https://github.com/ts-lora/ts-lora-chirpstack.git
 ```
-8) Move to the project's directory:
+5) Move to the project's directory:
 ```bash
    cd ts-lora-chirpstack
 ```
-10) Install curl to be able to download Nix:
+6) Install curl to be able to download Nix:
 ```bash
    sudo apt install curl -y
 ```
-12) Install xz-util to be able to unpack Nix:
+7) Install xz-util to be able to unpack Nix:
 ```bash
    sudo apt install xz-utils -y
 ```
-14) Install Nix:
+8) Install Nix:
 ```bash
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . /home/bob/.nix-profile/etc/profile.d/nix.sh
 ```
-16) Restart the shell session:
+9) Restart the shell session:
 ```bash
    exec $SHELL
 ```
-18) Install docker engine through its convenience script:
+10) Install docker engine through its convenience script:
 ```bash
    curl -fsSL https://get.docker.com -o install-docker.sh
    sudo sh install-docker.sh
 ```
-20) Allow to run the docker engine commands as a non-root user:
+11) Allow to run the docker engine commands as a non-root user:
 ```bash
    sudo groupadd docker
    sudo usermod -aG docker $USER
    newgrp docker
 ```
-22) Start the development shell:
+12) Start the development shell:
 ```bash
    nix-shell
 ```
-24) Build the Chirpstack UI:
+13) Build the Chirpstack UI:
 ```bash
     $ make build-ui
 ```
-26) Run the required services for the Chirpstack
+14) Run the required services for the Chirpstack
 ```bash
     $ docker compose up -d
 ```
-28) Run the Chirpstack tests (optional):
+15) Run the Chirpstack tests (optional):
  ```bash
     $ make test
 ```
-29) Install the Chirpstack's dependencies:
+16) Install the Chirpstack's dependencies:
 ```bash
     $ make dev-dependencies
 ```
-31) Do the debug build:
+17) Do the debug build:
 ```bash
     $ cd chirpstack
     $ make debug-amd64
 ```
-33) Run chirpstack
+18) Run chirpstack
 ```bash
     $ cd chirpstack
 ```
