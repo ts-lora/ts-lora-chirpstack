@@ -31,7 +31,7 @@ Here are the steps that you need to undertake to achieve the debug build optimiz
 ```bash
    sudo apt install xz-utils -y
 ```
-8) Install Nix:
+8) Install Nix (it is a package manager):
 ```bash
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
   . /home/bob/.nix-profile/etc/profile.d/nix.sh
